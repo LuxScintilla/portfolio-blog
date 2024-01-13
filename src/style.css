@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #292b2d;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("/src/assets/header-beach-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 108rem;
+}
+
+.header::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  height: 100rem;
+  width: 100rem;
+  background-image: url(./assets/nauticle-compass.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 10%;
+  animation: rotate 120s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  33% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  66% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+}
+
+.header__container {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.header__link,
+.header__link--middle {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 300;
+  color: #fff;
+  padding: 1rem 3rem;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.header__link--middle {
+  font-size: 2rem;
+  padding: 1.6rem 4rem;
+}
+
+.header__link:active,
+.header__link:hover,
+.header__link--middle:active,
+.header__link--middle:hover {
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header__link::after,
+.header__link--middle::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(100%);
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.header__link:active::after,
+.header__link:hover::after,
+.header__link--middle:active::after,
+.header__link--middle:hover::after {
+  transform: translateY(0%);
+}
+
+.header__link--img {
+  height: 10rem;
+  width: auto;
+}
+
+.header__title {
+  position: absolute;
+  top: 32rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 24px;
+  font-size: 12rem;
+  font-weight: 100;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+  z-index: 2;
+}
+
+.header__box {
+  position: absolute;
+  top: 24rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45rem;
+  height: 72rem;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: flex-end;
+
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 112, 84, 0.2),
+    rgba(0, 130, 153, 0.5),
+    rgba(0, 84, 179, 0.9),
+    rgb(107, 55, 156)
+  );
+  box-shadow: 0 16px 16px 4px rgba(0, 0, 0, 0.6);
+
+  z-index: 1;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote__text {
+  font-size: 2.2rem;
+}
+
+.quote__name {
+  font-weight: 700;
+  padding-left: 6.4rem;
+  align-self: flex-start;
+}
+
+.cto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cto__text {
+  margin-bottom: 2rem;
+}
+
+.cto__icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.featured {
+  background-color: #151617;
+  padding: 8rem 0 8rem 0;
+}
+
+.featured__title,
+.featured__subtitle {
+  text-align: center;
+}
+
+.featured__title {
+  font-size: 4.2rem;
+  font-weight: 300;
+}
+
+.featured__subtitle {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 100;
+  color: #a9aaab;
+}
