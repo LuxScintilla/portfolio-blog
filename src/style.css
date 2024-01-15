@@ -19,6 +19,8 @@ body {
   font-size: 1.6rem;
   color: #fff;
   background-color: #292b2d;
+
+  overflow-x: hidden;
 }
 
 .header {
@@ -31,52 +33,18 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-  height: 108rem;
-}
-
-.header::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 50%;
-  height: 100rem;
-  width: 100rem;
-  background-image: url(./assets/nauticle-compass.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 10%;
-  animation: rotate 120s infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-
-  33% {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-
-  66% {
-    transform: translate(-50%, -50%) rotate(-90deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) rotate(0);
-  }
+  height: 76rem;
 }
 
 .header__container {
   z-index: 10;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
-.header__link,
-.header__link--middle {
+.header__link {
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
@@ -91,20 +59,12 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.header__link--middle {
-  font-size: 2rem;
-  padding: 1.6rem 4rem;
-}
-
 .header__link:active,
-.header__link:hover,
-.header__link--middle:active,
-.header__link--middle:hover {
+.header__link:hover {
   box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.3);
 }
 
-.header__link::after,
-.header__link--middle::after {
+.header__link::after {
   position: absolute;
   content: "";
   bottom: 0;
@@ -118,9 +78,7 @@ body {
 }
 
 .header__link:active::after,
-.header__link:hover::after,
-.header__link--middle:active::after,
-.header__link--middle:hover::after {
+.header__link:hover::after {
   transform: translateY(0%);
 }
 
@@ -131,13 +89,13 @@ body {
 
 .header__title {
   position: absolute;
-  top: 32rem;
+  top: 21rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   width: 100%;
   text-align: center;
-  letter-spacing: 24px;
+  letter-spacing: 18px;
   font-size: 12rem;
   font-weight: 100;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
@@ -146,11 +104,12 @@ body {
 
 .header__box {
   position: absolute;
-  top: 24rem;
+  top: 16rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 45rem;
-  height: 72rem;
+  width: 40rem;
+  height: 58rem;
+  padding: 2rem;
 
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -175,13 +134,12 @@ body {
 }
 
 .quote__text {
-  font-size: 2.2rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .quote__name {
   font-weight: 700;
-  padding-left: 6.4rem;
-  align-self: flex-start;
 }
 
 .cto {
@@ -192,7 +150,8 @@ body {
 }
 
 .cto__text {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .cto__icon {
@@ -201,8 +160,11 @@ body {
 }
 
 .featured {
-  background-color: #151617;
   padding: 8rem 0 8rem 0;
+}
+
+.featured--allposts {
+  margin-top: -28rem;
 }
 
 .featured__title,
@@ -220,4 +182,184 @@ body {
   font-size: 2rem;
   font-weight: 100;
   color: #a9aaab;
+}
+
+.featured__list {
+  max-width: 110rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-template-rows: 1fr 1fr;
+
+  gap: 2rem;
+  padding: 10rem 1rem 10rem 1rem;
+  margin: 0 auto;
+}
+
+.featured__item {
+  position: relative;
+  max-height: 48rem;
+  overflow: hidden;
+  box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.4);
+}
+
+.featured__item--top {
+  grid-column: span 2;
+}
+
+.article__img {
+  display: block;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.article:hover > .article__img {
+  transform: scale(1.1);
+}
+
+.article__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.article__title {
+  margin-bottom: 2rem;
+  font-size: 3.2rem;
+  font-weight: 300;
+}
+
+.article__snippet {
+  margin-bottom: auto;
+}
+
+.btn {
+  all: unset;
+  background-color: #008299;
+  padding: 1.6rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:active,
+.btn:hover {
+  background-color: #664b81;
+}
+
+.container {
+  margin-top: -20rem;
+  margin-bottom: 12rem;
+  padding: 2rem;
+}
+
+.main-article {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 4rem auto 1fr;
+  gap: 2rem;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.main-article__title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.main-article__meta {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.main-article__img {
+  grid-column: 1;
+  grid-row: 3;
+  display: inline-block;
+  width: 100%;
+  max-height: 48rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.main-article__text {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: justify;
+}
+
+.footer {
+  background-color: #151617;
+  padding: 10rem 0 10rem 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .header__title {
+    font-size: 8rem;
+    letter-spacing: 12px;
+  }
+}
+
+@media (max-width: 690px) {
+  .featured__item--top {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    height: 64rem;
+  }
+
+  .header__title {
+    font-size: 6rem;
+    letter-spacing: 12px;
+  }
+
+  .header__box {
+    width: 32rem;
+    height: 48rem;
+  }
+
+  .quote__text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__container {
+    gap: 1rem;
+  }
+
+  .header__link {
+    padding: 1rem 2rem;
+  }
+
+  .header__title {
+    top: 24rem;
+    font-size: 4rem;
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__link {
+    padding: 0.5rem 1rem;
+  }
+
+  .featured__subtitle {
+    font-size: 1.4rem;
+  }
 }
