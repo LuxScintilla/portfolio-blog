@@ -1,0 +1,14 @@
+---
+layout: 'base.njk'
+---
+
+<div class="container">
+  <article class="main-article">
+    <h3 class="main-article__title">{{ title }}</h3>
+    <p class="main-article__meta">by {{ author }} on <span>{{ date | postDate }}</span></p>
+    <img class="main-article__img" src="{{ image }}" alt="{{ imageAlt }}">
+
+    {{ content | safe }}
+
+  </article>
+</div>

@@ -1,0 +1,20 @@
+---
+title: All Blog Posts
+layout: 'base.njk'
+---
+
+<section class="featured featured--allposts">
+  <h2 class="featured__title">All Blog Posts</h2>
+  <p class="featured__subtitle">Look through all articles to date</p>
+
+  <ul class="featured__list">
+
+    {%- for post in collections.post | reverse -%}
+
+    {% include 'article-snippet.njk' %}
+
+    {%- endfor -%}
+
+  </ul>
+
+</section>
