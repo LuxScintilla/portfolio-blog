@@ -11,7 +11,8 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/style.css">
-  <title>example</title>
+  <title>Lux Blog | Featured Posts</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -92,6 +93,18 @@
     <strong>Ekaterina Furman</strong>
   </p>
 </footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 
 </body>
 
