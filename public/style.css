@@ -28,7 +28,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-image: url("/assets/header-beach-bg.jpg");
+  background-image: linear-gradient(to top, #292b2d 0 1%, transparent 1% 100%),
+    url("/assets/beach-bg-large.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -297,6 +298,13 @@ body {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .header {
+    background-image: linear-gradient(to top, #292b2d 0 1%, transparent 1% 100%),
+      url("/assets/beach-bg-medium.jpg");
+  }
+}
+
 @media (max-width: 900px) {
   .header__title {
     font-size: 8rem;
@@ -314,6 +322,8 @@ body {
 @media (max-width: 640px) {
   .header {
     height: 64rem;
+    background-image: linear-gradient(to top, #292b2d 0 1%, transparent 1% 100%),
+      url("/assets/beach-bg-small.jpg");
   }
 
   .header__nav {
