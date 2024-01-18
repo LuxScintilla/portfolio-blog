@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;300;400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <title>HTML Cookies and Storage</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+  <ul class="header__nav">
+    <li>
+      <a class="header__link" href="/">Featured</a>
+    </li>
+    <li>
+      <a class="header__link" href="https://luxscintilla.com/">Home</a>
+    </li>
+    <li>
+      <a class="header__link" href="/blog/">All Posts</a>
+    </li>
+  </ul>
+  <h1 class="header__title">LUXSCINTILLA</h1>
+  <div class="header__box">
+    <div class="quote">
+      <p class="quote__text">“The expert in anything was once a beginner.”</p>
+      <p class="quote__name">― Helen Hayes</p>
+    </div>
+
+    <div class="cto">
+      <p class="cto__text">My blog posts focus on HTML, CSS, and JavaScript knowledge that is often reported to be asked
+        on interviews, I myself have searched high and low to pinpoint the topics of interest and gather as many as I
+        can in one place.</p>
+      <img class="cto__icon" src="/assets/arrow-down.png" alt="arrow down">
+    </div>
+  </div>
+</header>
+
+  <main>
+
+    
+<div class="container">
+  <article class="main-article">
+    <h2 class="main-article__title">HTML Cookies and Storage</h2>
+    <p class="main-article__meta">by Ekaterina Furman on <span>Jan 18, 2024</span></p>
+    <img class="main-article__img" src="/assets/blog/html-storage.jpg" alt="This is a test">
+
+    <p>Describe the difference between a cookie, sessionStorage and localStorage.</p>
+<h3>General Overview:</h3>
+<p>The local storage is a type of HTML5 offline storage that allows user string data to be saved synchronously in their browser. Information is kept in name and value pairs and not available between different browsers on the same device.</p>
+<p>Local storage can be used as an alternative to cookies. It provides a chance to store more data: 4KB is the limit for cookies, and local storage allows using up to 10MB, depending on the browser. Moreover, the process is more efficient – the browser does not send any local storage data to the server in any step.</p>
+<h3>Local Storage:</h3>
+<p>Most web applications these days require some type of user input, whether it be for a username, shipping address, or even just a preferences setting. This input is then usually sent off to a server somewhere to be processed and stored. However, what if your application needs to store data locally on the user’s computer? This is where Local Storage comes in.</p>
+<p>Local Storage is a type of web storage that allows JavaScript to store and access data right in the browser. This is especially useful for storing data that you want to persist even if the user closes the browser, such as preferences or settings.</p>
+<p>The data in Local Storage is stored in key/value pairs. The key is like the name of the data, and the value is like the actual data itself. You can think of it as a variable in JavaScript. To store data in Local Storage, you first need to create a key. Then you can store any data you want under that key.</p>
+<p>To create a key, you use the setItem() method. This method takes two arguments, the first is the key, and the second is the value you want to store.</p>
+<code>
+localStorage.setItem('key', 'value');
+</code>
+<p>Now that you have a key, you can store any data you want under that key. The data you store can be any data type that JavaScript supports, including strings, numbers, objects, and arrays.</p>
+<p>To store data, you use the setItem() method again. This time, you pass in the key as the first argument and the data you want to store as the second argument.</p>
+<code>
+localStorage.setItem('key', 'value');
+</code>
+<p>To retrieve data from Local Storage, you use the getItem() method. This method takes the key as an argument and returns the data that is stored under that key.</p>
+<code>
+localStorage.getItem('key');
+</code>
+<p>If you want to remove an item from Local Storage, you use the removeItem() method. This method takes the key as an argument and removes the data that is stored under that key.</p>
+<code>
+localStorage.removeItem('key');
+</code>
+<h3>Session Storage:</h3>
+<p>The sessionStorage object stores data only for a session. It means that the data stored in the sessionStorage will be deleted when the browser is closed.</p>
+<p>A page session lasts as long as the web browser is open and survives over the page refresh.</p>
+<p>When you open a page in a new tab or window, the web browser creates a new session.</p>
+<p>If you open multiple tabs or windows with the same URL, the web browser creates a separate sessionStorage for each tab or window. So data stored in one web browser tab cannot be accessible in another tab.</p>
+<p>When you close a tab or window, the web browser ends the session and clears data in the sessionStorage.</p>
+<p>Data stored in the sessionStorage is specific to the protocol of the page. For example, the same site javascripttutorial.net has different sessionStorage when accessing with the http and https.</p>
+<p>Since the sessionStorage data is tied to a server session, it’s only available when a page is requested from a server. The sessionStorage isn’t available when the page runs locally without a server.</p>
+<p>Because the sessionStorage is an instance of the Storage type, you can manage data using the Storage’s methods:</p>
+<ul>
+  <li>setItem(name, value) – set the value for a name</li>
+  <li>removeItem(name) – remove the name-value pair identified by name</li>
+  <li>getItem(name) – get the value for a given name</li>
+  <li>key(index) – get the name of the value in the given numeric position</li>
+  <li>clear() – remove all values in the sessionStorage</li>
+</ul>
+<p>Just like cookies, HTML5 offline storage shouldn't be used to store sensitive information (e.g., user IDs or payment information). It can be easily accessed by any JS script and compromised in case of a cross-scripting attack.</p>
+<h3>Cookies:</h3>
+<p>An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's web browser. The browser may store the cookie and send it back to the same server with later requests. Typically, an HTTP cookie is used to tell if two requests come from the same browser—keeping a user logged in, for example. It remembers stateful information for the stateless HTTP protocol.</p>
+<p>Cookies are mainly used for three purposes:</p>
+<p><strong>Session management:</strong>
+Logins, shopping carts, game scores, or anything else the server should remember</p>
+<p><strong>Personalization:</strong>
+User preferences, themes, and other settings</p>
+<p><strong>Tracking:</strong>
+Recording and analyzing user behavior</p>
+<h3>Conclusion:</h3>
+<p><strong>Cookies:</strong></p>
+  <ul>
+    <li>Capacity: 4KB</li>
+    <li>Access: Any Window</li>
+    <li>Expiration: Set Manually</li>
+    <li>Location: Browser and Server</li>
+    <li>Sent with Requests: Yes</li>
+  </ul>
+<p><strong>Local Storage:</strong></p>
+  <ul>
+    <li>Capacity: 10MB</li>
+    <li>Access: Any Window</li>
+    <li>Expiration: Never</li>
+    <li>Location: Browser</li>
+    <li>Sent with Requests: No</li>
+  </ul>
+<p><strong>Session Storage:</strong></p>
+  <ul>
+    <li>Capacity: 5MB</li>
+    <li>Access: Same Tab</li>
+    <li>Expiration: on Tab or Window close</li>
+    <li>Location: Browser</li>
+    <li>Sent with Requests: No</li>
+  </ul>
+
+
+  </article>
+</div>
+
+  </main>
+
+  <footer class="footer">
+  <p class="copyright">
+    All rights reserved &copy; <span class="year">2024</span>
+    <strong>Ekaterina Furman</strong>
+  </p>
+</footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
