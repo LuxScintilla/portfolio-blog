@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   background-image: linear-gradient(to top, #292b2d 0 1%, transparent 1% 100%),
     url("/assets/beach-bg-large.jpg");
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 
