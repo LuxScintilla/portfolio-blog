@@ -156,7 +156,7 @@ body {
   font-size: 2.4rem;
 }
 
-/* -------- FEATURED -------- */
+/* -------- FEATURED & ALL POSTS -------- */
 
 .featured,
 .allposts {
@@ -269,6 +269,53 @@ body {
 .btn:active,
 .btn:hover {
   background-color: var(--color-snippet-btn-hover);
+}
+
+/* -------- MAIN ARTICLE -------- */
+
+.main-article {
+  position: relative;
+  z-index: 100;
+  color: var(--color-text-dark);
+  margin-bottom: 16rem;
+}
+
+.main-article__title,
+.main-article__meta {
+  color: var(--color-text-dark);
+}
+
+.main-article__title {
+  font-size: 3.2rem;
+  font-weight: 400;
+}
+
+.main-article__meta {
+  margin-bottom: 2rem;
+}
+
+.main-article__img {
+  max-width: 100%;
+  margin-bottom: 4rem;
+  box-shadow: 0 2px 16px 4px rgba(0, 0, 0, 0.4);
+}
+
+.main-article p,
+.main-article ul,
+.main-article h3 {
+  margin-bottom: 2rem;
+}
+
+.main-article ul {
+  margin-left: 6rem;
+}
+
+.main-article code {
+  display: inline-block;
+  background-color: var(--color-snippet-bg);
+  color: var(--color-text-light);
+  padding: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* -------- FOOTER -------- */
