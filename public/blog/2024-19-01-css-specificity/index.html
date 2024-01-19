@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;300;400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <title>CSS Specificity</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+
+  <nav class="nav">
+  <div class="container">
+    <div class="nav__container">
+      <a href="https://luxscintilla.com/" aria-label="image link to portfolio home">
+        <img class="nav__logo" src="/assets/blog-logo-dark.png" alt="luxscintilla logo">
+      </a>
+
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="https://luxscintilla.com/">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/">Featured</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/blog/">All Posts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+
+    <div class="hero">
+      <div class="hero__body">
+        <h2 class="hero__title">Let's make it happen</h2>
+        <p class="hero__text">Keep learning, keep building, keep exploring!</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+  <main>
+
+    
+
+<article class="main-article">
+  <div class="container">
+    <h2 class="main-article__title">CSS Specificity</h2>
+    <p class="main-article__meta">by Ekaterina Furman on <span>Jan 19, 2024</span></p>
+    <img class="main-article__img" src="/assets/blog/css-specificity.jpg" alt="css specificity counters">
+
+    <p>What is CSS selector specificity and how does it work?</p>
+<h3>General Overview:</h3>
+<p>Each selector rule gets a scoring. You can think of specificity as a total score and each selector type earns points towards that score. The selector with the highest score wins.</p>
+<p>With specificity in a real project, the balancing act is making sure the CSS rules you expect to apply, actually do apply, while generally keeping scores low to prevent complexity. The score should only be as high as we need it to be, rather than aiming for the highest score possible. In the future, some genuinely more important CSS might need to be applied. If you go for the highest score, you'll make that job hard.</p>
+<h3>Scoring The Selector Types</h3>
+<p><strong>Universal selector ( * )</strong><br>
+This selector has no specificity and gets 0 points. Meaning that any rule with 1 or more points will override it.</p>
+<p><strong>Type or Psuedo-Element selector ( div, span, p, ::before)</strong><br>
+These elements get 1 point.</p>
+<p><strong>Class, Psuedo-Class, or Attribute selector ( .my-class, :hover, a[attr=&quot;value&quot;])</strong><br>
+Each of these will get 10 points.</p>
+<p>Sidenote: the :not() pseudo-class itself adds nothing to the specificity calculation. However, the selectors passed in as arguments do get added to the specificity calculation.<br></p>
+<code>
+div:not(.my-class) {<br>
+color: red;<br>
+}<br>
+</code>
+<p>This sample would have 11 points of specificity because it has one type selector (div) and one class inside the :not()</p>
+<p><strong>ID Selector ( #myID )</strong><br>
+An ID selector gets 100 points of specificity, as long as you use an ID selector (#myID) and not an attribute selector ([id=&quot;myID&quot;])</p>
+<p><strong>Inline Style Attribute</strong><br>
+CSS applied directly to the style attribute of the HTML element, gets a specificity score of 1,000 points. This means that in order to override it in CSS, you have to write an extremely specific selector.</p>
+<p><strong>!important rule</strong><br>
+Lastly, an !important at the end of a CSS value gets a specificity score of 10,000 points. This is the highest specificity that one individual item can get.</p>
+<p>An !important rule is applied to a CSS property, so everything in the overall rule (selector and properties) does not get the same specificity score.</p>
+<code>
+.my-class {<br>
+  color: red !important; /* 10,000 points */<br>
+  background: white; /* 10 points */<br>
+}<br>
+</code>
+
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <p class="copyright">
+      All rights reserved &copy; <span class="year">2024</span>
+      <strong>Ekaterina Furman</strong>
+    </p>
+  </div>
+</footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
