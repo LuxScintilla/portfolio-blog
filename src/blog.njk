@@ -1,20 +1,22 @@
 ---
-title: Lux Blog | All Posts
+title: Portfolio Blog | All Posts
 layout: 'base.njk'
 ---
 
-<section class="featured featured--allposts">
-  <h2 class="featured__title">All Blog Posts</h2>
-  <p class="featured__subtitle">Look through all articles to date</p>
+<section class="allposts">
+  <div class="container">
+    <h2 class="allposts__title">All Blog Posts</h2>
+    <p class="allposts__subtitle">Look through all articles to date</p>
 
-  <ul class="featured__list">
+    <ul class="allposts__list">
 
-    {%- for post in collections.post | reverse -%}
+      {%- for post in collections.post | reverse -%}
 
-    {% include 'article-snippet.njk' %}
+      {% include 'article-snippet.njk' %}
 
-    {%- endfor -%}
+      {%- endfor -%}
 
-  </ul>
+    </ul>
+  </div>
 
 </section>

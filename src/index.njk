@@ -1,20 +1,21 @@
 ---
-title: Lux Blog | Featured Posts
+title: Portfolio Blog | Featured Posts
 layout: 'base.njk'
 ---
 
 <section class="featured">
-  <h2 class="featured__title">Featured Posts</h2>
-  <p class="featured__subtitle">Stay up to date with the most recent articles</p>
+  <div class="container">
+    <h2 class="featured__title">Featured Posts</h2>
+    <p class="featured__subtitle">Stay up to date with the most recent articles</p>
 
-  <ul class="featured__list">
+    <ul class="featured__list">
 
-    {%- for post in collections.featured | reverse -%}
+      {%- for post in collections.featured | reverse -%}
 
-    {% include 'article-snippet.njk' %}
+      {% include 'article-snippet.njk' %}
 
-    {%- endfor -%}
+      {%- endfor -%}
 
-  </ul>
-
+    </ul>
+  </div>
 </section>

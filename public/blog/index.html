@@ -11,84 +11,95 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/style.css">
-  <title>Lux Blog | All Posts</title>
+  <title>Portfolio Blog | All Posts</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
 
-  <header class="header">
-  <ul class="header__nav">
-    <li>
-      <a class="header__link" href="/">Featured</a>
-    </li>
-    <li>
-      <a class="header__link" href="https://luxscintilla.com/">Home</a>
-    </li>
-    <li>
-      <a class="header__link" href="/blog/">All Posts</a>
-    </li>
-  </ul>
-  <h1 class="header__title">LUXSCINTILLA</h1>
-  <div class="header__box">
-    <div class="quote">
-      <p class="quote__text">“The expert in anything was once a beginner.”</p>
-      <p class="quote__name">― Helen Hayes</p>
+  <nav class="nav">
+  <div class="container">
+    <div class="nav__container">
+      <a href="https://luxscintilla.com/" aria-label="image link to portfolio home">
+        <img class="nav__logo" src="/assets/blog-logo-dark.png" alt="luxscintilla logo">
+      </a>
+
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="https://luxscintilla.com/">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/">Featured</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/blog/">All Posts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+
+    <div class="hero">
+      <div class="hero__body">
+        <h2 class="hero__title">Let's make it happen</h2>
+        <p class="hero__text">Keep learning, keep building, keep exploring!</p>
+      </div>
     </div>
 
-    <div class="cto">
-      <p class="cto__text">My blog posts focus on HTML, CSS, and JavaScript knowledge that is often reported to be asked
-        on interviews, I myself have searched high and low to pinpoint the topics of interest and gather as many as I
-        can in one place.</p>
-      <img class="cto__icon" src="/assets/arrow-down.png" alt="arrow down">
-    </div>
   </div>
 </header>
 
   <main>
 
     
-<section class="featured featured--allposts">
-  <h2 class="featured__title">All Blog Posts</h2>
-  <p class="featured__subtitle">Look through all articles to date</p>
+<section class="allposts">
+  <div class="container">
+    <h2 class="allposts__title">All Blog Posts</h2>
+    <p class="allposts__subtitle">Look through all articles to date</p>
 
-  <ul class="featured__list"><li class="featured__item">
-  <article class="article">
-    <div class="article__img-container">
-      <img class="article__img" src="/assets/blog/html5-building-blocks.jpg" alt="html5 code">
+    <ul class="allposts__list"><li class="list__item">
+  <article class="snippet">
+    <div class="snippet__img-container">
+      <img class="snippet__img" src="/assets/blog/html5-building-blocks.jpg" alt="html5 code">
     </div>
-    <div class="article__body">
-      <h3 class="article__title"><a href="/blog/2021-18-01-html5-building-blocks/">HTML5 Building Blocks</a></h3>
-      <p class="article__date">Jan 18, 2024</p>
-      <p class="article__snippet">Consider HTML5 as an open web platform. What are the building blocks of HTML5?</p>
+    <div class="snippet__body">
+      <h3 class="snippet__title"><a href="/blog/2021-18-01-html5-building-blocks/">HTML5 Building Blocks</a></h3>
+      <p class="snippet__date">Jan 18, 2024</p>
+      <p class="snippet__description">Consider HTML5 as an open web platform. What are the building blocks of HTML5?</p>
       <a class="btn" aria-label="continue reading about HTML5 Building Blocks" href="/blog/2021-18-01-html5-building-blocks/">Continue
         Reading</a>
     </div>
   </article>
-</li><li class="featured__item">
-  <article class="article">
-    <div class="article__img-container">
-      <img class="article__img" src="/assets/blog/html-storage.jpg" alt="This is a test">
+</li><li class="list__item">
+  <article class="snippet">
+    <div class="snippet__img-container">
+      <img class="snippet__img" src="/assets/blog/html-storage.jpg" alt="This is a test">
     </div>
-    <div class="article__body">
-      <h3 class="article__title"><a href="/blog/2021-18-01-html-cookies-storage/">HTML Cookies and Storage</a></h3>
-      <p class="article__date">Jan 18, 2024</p>
-      <p class="article__snippet">Describe the difference between a cookie, sessionStorage and localStorage.</p>
+    <div class="snippet__body">
+      <h3 class="snippet__title"><a href="/blog/2021-18-01-html-cookies-storage/">HTML Cookies and Storage</a></h3>
+      <p class="snippet__date">Jan 18, 2024</p>
+      <p class="snippet__description">Describe the difference between a cookie, sessionStorage and localStorage.</p>
       <a class="btn" aria-label="continue reading about HTML Cookies and Storage" href="/blog/2021-18-01-html-cookies-storage/">Continue
         Reading</a>
     </div>
   </article>
 </li></ul>
+  </div>
 
 </section>
 
   </main>
 
   <footer class="footer">
-  <p class="copyright">
-    All rights reserved &copy; <span class="year">2024</span>
-    <strong>Ekaterina Furman</strong>
-  </p>
+  <div class="container">
+    <p class="copyright">
+      All rights reserved &copy; <span class="year">2024</span>
+      <strong>Ekaterina Furman</strong>
+    </p>
+  </div>
 </footer>
 
   <script>
